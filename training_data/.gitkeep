@@ -1,0 +1,16 @@
+# Training data directory
+# 
+# This folder stores collected posture data for ML training.
+# 
+# Files:
+#   posture_data_YYYYMMDD_HHMMSS.json  - Raw collected data
+#   cleaned_data.json                   - Cleaned/validated data
+#
+# To collect data:
+#   python -m Model_Development.training.data_collector
+#
+# To clean data:
+#   python -m Model_Development.training.data_cleaner
+#
+# To train model:
+#   python -m Model_Development.training.train_model

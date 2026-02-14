@@ -1,0 +1,10 @@
+{
+  "cv_accuracy_mean": 0.9094359796845763,
+  "cv_accuracy_std": 0.0202235220649568,
+  "test_accuracy": 0.8611111111111112,
+  "n_samples": 539,
+  "n_train": 431,
+  "n_test": 108,
+  "n_features": 10,
+  "trained_at": "2026-02-13T00:34:31.623644"
+}

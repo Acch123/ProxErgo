@@ -1,0 +1,87 @@
+# ProxErgo Configuration
+# Posture & Fatigue Monitoring
+
+# Camera Settings
+camera:
+  device_id: 0
+  width: 640
+  height: 480
+  fps: 30
+
+# Detection Settings
+detection:
+  pose:
+    min_detection_confidence: 0.5
+    min_tracking_confidence: 0.5
+    model_complexity: 1  # 0=Lite, 1=Full, 2=Heavy
+  face_mesh:
+    max_num_faces: 1
+    min_detection_confidence: 0.5
+    min_tracking_confidence: 0.5
+    refine_landmarks: true
+
+# Biomechanical Thresholds (based on medical literature)
+biomechanics:
+  cva:
+    optimal: 5.0      # < 5° from vertical = optimal
+    mild: 12.0        # 5-12° = mild forward head
+    moderate: 20.0    # 12-20° = moderate
+    # > 20° = severe
+  shoulder_tilt:
+    threshold: 5.0    # Degrees considered significant
+  calibration:
+    auto_calibrate: true
+    calibration_frames: 30
+
+# Fatigue Detection Thresholds
+fatigue:
+  ear_threshold: 0.2          # Eye Aspect Ratio threshold for "closed"
+  blink_min_duration_ms: 100  # Minimum blink duration
+  blink_max_duration_ms: 400  # Maximum blink duration
+  window_seconds: 60          # Rolling window for PERCLOS
+  perclos:
+    mild: 15.0
+    moderate: 25.0
+    severe: 40.0
+  blink_rate:
+    low: 8              # Below this = abnormal
+    normal_low: 12
+    normal_high: 20
+    high: 30            # Above this = abnormal
+
+# Postural Sway Analysis
+sway:
+  window_seconds: 30
+  sample_rate: 30
+
+# Alerts & Notifications
+alerts:
+  enabled: true
+  posture_alert_delay_seconds: 5    # Time before alerting on bad posture
+  fatigue_alert_delay_seconds: 10   # Time before alerting on fatigue
+  sound_enabled: false
+  visual_enabled: true
+
+# Privacy Settings
+privacy:
+  store_landmarks_only: true
+  no_video_recording: true
+  local_processing_only: true
+
+# Data Storage
+storage:
+  database_path: "data/sessions.db"
+  max_session_history_days: 30
+
+# UI Settings
+ui:
+  overlay:
+    show_skeleton: true
+    show_metrics: true
+    show_privacy_badge: true
+  theme: "dark"
+  colors:
+    optimal: "#00ff88"
+    warning: "#ffaa00"
+    danger: "#ff4444"
+    primary: "#00d4ff"

@@ -1,0 +1,34 @@
+# ProxErgo - Conda Environment
+# Create: conda env create -f environment.yml
+# Activate: conda activate proxergo
+
+name: proxergo
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  
+  # Core Computer Vision
+  - opencv=4.9.*
+  - numpy>=1.24
+  - scipy>=1.11
+  
+  # Machine Learning
+  - scikit-learn>=1.4
+  - joblib>=1.3
+  - xgboost>=2.0
+  
+  # Data & Visualization
+  - pandas>=2.1
+  - plotly>=5.18
+  - pyyaml>=6.0
+  
+  # Pip-only packages
+  - pip
+  - pip:
+    - mediapipe>=0.10.9
+    - streamlit>=1.31.0
+    - streamlit-webrtc>=0.47.0
+    - av>=11.0.0
