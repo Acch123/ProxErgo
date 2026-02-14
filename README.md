@@ -31,7 +31,6 @@
 ProxErgo/
 ├── Clinical_Research/          # Evidence-based thresholds
 │   ├── clinical_thresholds.py
-│   └── references.md
 │
 ├── Model_Development/          # Core analysis
 │   ├── core/
